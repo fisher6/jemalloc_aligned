@@ -1,4 +1,8 @@
--- Note that on the third line of ./src/jemalloc.c, there is the CUSTOM_ALIGNMENT marco which you need to change according to the desired alignment size: --
+-------------------------------------------------------------------------------
+---------------- ALIGNED JEMALLOC INSTALLATION NOTES README -------------------
+-------------------------------------------------------------------------------
+Note that on the third line of ./src/jemalloc.c, there is the CUSTOM_ALIGNMENT 
+marco which you need to change according to the desired alignment size (32/64)
 
 Steps for configuring and building the library:
 - ./configure --with-lg-quantum=6 --with-lg-tiny-min=6 (this is for 64 alignment, replace 5 in 6 for 32 byte alignment)
@@ -6,8 +10,13 @@ Steps for configuring and building the library:
 - make install
 
 Then run the benchmarks with ENV_LD_PRELOAD and with vmStat as usual.
-** If you get permission denied error during the ./configure stage, run chmod -R u+x ./include/jemalloc, and run ./configure ... step again
----------------------------------------------------------
+
+** If you get permission denied error during the ./configure stage, run
+chmod -R u+x ./include/jemalloc , and run the steps for configuring from the start
+
+-------------------------------------------------------------------------------
+----------------------------- ORIGINIAL README --------------------------------
+-------------------------------------------------------------------------------
 jemalloc is a general purpose malloc(3) implementation that emphasizes
 fragmentation avoidance and scalable concurrency support.  jemalloc first came
 into use as the FreeBSD libc allocator in 2005, and since then it has found its
