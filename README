@@ -1,11 +1,11 @@
 -------------------------------------------------------------------------------
----------------- ALIGNED JEMALLOC INSTALLATION NOTES README -------------------
+-------------------- ALIGNED JEMALLOC INSTALLATION NOTES ----------------------
 -------------------------------------------------------------------------------
 Note that on the third line of ./src/jemalloc.c, there is the CUSTOM_ALIGNMENT 
 marco which you need to change according to the desired alignment size (32/64)
 
-Steps for configuring and building the library:
-- ./configure --with-lg-quantum=6 --with-lg-tiny-min=6 (this is for 64 alignment, replace 5 in 6 for 32 byte alignment)
+Steps for configuring and building the library (replace 5 in 6 for 32bytes alignment):
+- ./configure --with-lg-quantum=6 --with-lg-tiny-min=6 
 - make
 - make install
 
