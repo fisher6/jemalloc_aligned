@@ -6,6 +6,7 @@ Steps for configuring and building the library:
 - make install
 
 Then run the benchmarks with ENV_LD_PRELOAD and with vmStat as usual.
+** If you get permission denied error during the ./configure stage, run chmod -R u+x ./include/jemalloc, and run ./configure ... step again
 ---------------------------------------------------------
 jemalloc is a general purpose malloc(3) implementation that emphasizes
 fragmentation avoidance and scalable concurrency support.  jemalloc first came
