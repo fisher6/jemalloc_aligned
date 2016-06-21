@@ -15,7 +15,7 @@ Then run the benchmarks with ENV_LD_PRELOAD and with vmStat as usual.
 chmod -R u+x ./include/jemalloc , and run the steps for configuring from the start
 
 -------------------------------------------------------------------------------
------------------------------ ORIGINIAL README --------------------------------
+------------------------------ ORIGINAL README --------------------------------
 -------------------------------------------------------------------------------
 jemalloc is a general purpose malloc(3) implementation that emphasizes
 fragmentation avoidance and scalable concurrency support.  jemalloc first came
