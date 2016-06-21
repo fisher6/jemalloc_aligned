@@ -1,4 +1,5 @@
 # Runs the following PARSEC Benchmarks: Canneal, Facesim, Bodytrack, Fluidanimate using jemalloc and tcmalloc as memory allocators
+# TODO: Make the script more generic - one loop and gets the benchmark names and parameters from a different file
 # Written by Gal Fisher and Dor Ma'ayan, June, 2016
 
 for i in {1..2}
@@ -9,7 +10,8 @@ do
 	rm vmpeak.stat
 	env LD_PRELOAD=/usr/local/lib/libjemalloc.so ~/code/measure_vmpeak/measure_vmpeak ~/parsec-3.0/pkgs/kernels/canneal/inst/amd64-linux.gcc/bin/canneal 1 15000 2000 ~/parsec-3.0/pkgs/kernels/canneal/run/2500000.nets 600 > /dev/null
 	echo -n "canneal jemalloc "
-	tail -1 vmpeak.stat | tr -s ' ' ' ' | cut -d' ' -f2; rm vmpeak.stat
+	tail -1 vmpeak.stat | tr -s ' ' ' ' | cut -d' ' -f2
+	rm vmpeak.stat
 done
 
 curr_dir=`pwd`
